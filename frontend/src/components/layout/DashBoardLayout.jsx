@@ -1,6 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
 
-export default function DashBoardLayout() {
+export default function DashboardLayout() {
   return (
     <div className="min-h-screen flex bg-gray-100">
       
