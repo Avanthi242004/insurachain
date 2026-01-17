@@ -5,14 +5,13 @@ const AuthContext = createContext();
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
 
-  const login = (email) => {
-    if (email === "admin@gmail.com")
-      setUser({ email, role: "admin" });
-    else
-      setUser({ email, role: "user" });
+  const login = (data) => {
+    setUser(data); // later connect to backend
   };
 
-  const logout = () => setUser(null);
+  const logout = () => {
+    setUser(null);
+  };
 
   return (
     <AuthContext.Provider value={{ user, login, logout }}>
@@ -21,4 +20,6 @@ export function AuthProvider({ children }) {
   );
 }
 
-export const useAuth = () => useContext(AuthContext);
+export function useAuth() {
+  return useContext(AuthContext);
+}
