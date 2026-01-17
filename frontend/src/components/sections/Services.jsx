@@ -1,36 +1,62 @@
 export default function Services() {
   return (
-    <section className="py-28 bg-slate-50">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="services-section">
+      <div className="services-container">
 
-        <div className="text-center max-w-2xl mx-auto">
-          <span className="text-primary uppercase font-semibold">
-            Our Services
-          </span>
-          <h2 className="mt-3 text-4xl font-bold text-gray-900">
-            Excellent service and support for you
+        {/* LEFT SIDE */}
+        <div className="services-left">
+          <div className="services-image-wrapper">
+            <img
+              src="https://via.placeholder.com/320x320.png?text=Insurance+Expert"
+              alt="Insurance Services"
+              className="services-image"
+            />
+
+            {/* Floating Pills */}
+            <span className="service-pill pill-1">Policy Management</span>
+            <span className="service-pill pill-2">Claim Tracking</span>
+            <span className="service-pill pill-3">Smart Contracts</span>
+            <span className="service-pill pill-4">Fraud Detection</span>
+            <span className="service-pill pill-5">Blockchain Ledger</span>
+          </div>
+        </div>
+
+        {/* RIGHT SIDE */}
+        <div className="services-right">
+          <span className="services-label">— Services</span>
+
+          <h2 className="services-title">
+            What Does <span>InsuraChain</span> Offer?
           </h2>
+
+          <p className="services-description">
+            InsuraChain delivers secure, transparent, and automated insurance
+            services powered by blockchain technology, ensuring trust between
+            providers and policyholders.
+          </p>
+
+          {/* STATS */}
+          <div className="services-stats">
+            <div>
+              <h3>100%</h3>
+              <p>Transparent Records</p>
+            </div>
+            <div>
+              <h3>24/7</h3>
+              <p>Claim Tracking</p>
+            </div>
+            <div>
+              <h3>0%</h3>
+              <p>Data Tampering</p>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <button className="services-btn">
+            View Services <span>+</span>
+          </button>
         </div>
 
-        <div className="mt-16 grid md:grid-cols-3 gap-10">
-          {["Life Insurance", "Health Insurance", "Vehicle Insurance"].map(
-            (service) => (
-              <div
-                key={service}
-                className="bg-white p-10 rounded-2xl shadow-md hover:shadow-xl transition text-center"
-              >
-                <div className="w-16 h-16 mx-auto bg-red-50 rounded-full flex items-center justify-center text-primary font-bold text-xl">
-                  ✓
-                </div>
-
-                <h3 className="mt-6 text-xl font-semibold">{service}</h3>
-                <p className="mt-3 text-gray-600">
-                  Reliable coverage for your needs.
-                </p>
-              </div>
-            )
-          )}
-        </div>
       </div>
     </section>
   );
