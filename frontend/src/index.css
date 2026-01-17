@@ -1,98 +1,187 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* ===============================
-   THEME VARIABLES (OLIVIA STYLE)
-================================ */
-:root {
-  --green-dark: #2f4f3a;
-  --green-light: #3f6b4f;
-  --yellow: #fbbf24;
-  --yellow-soft: #fde68a;
-  --text-dark: #111827;
-  --text-muted: #6b7280;
-  --bg-light: #ffffff;
-}
-
-/* ===============================
-   BASE STYLES
-================================ */
-html {
-  scroll-behavior: smooth;
+/* ---------------- RESET ---------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
-    "Helvetica Neue", sans-serif;
-  background-color: var(--bg-light);
-  color: var(--text-dark);
-  line-height: 1.7;
+  font-family: "Poppins", sans-serif;
+  background: #ffffff;
+  color: #1e1e1e;
 }
 
-/* Headings */
-h1, h2, h3, h4 {
-  font-weight: 800;
-  color: var(--text-dark);
+/* ---------------- NAVBAR ---------------- */
+.navbar-wrapper {
+  padding: 24px 0;
 }
 
-/* ===============================
-   REUSABLE HELPERS (SAFE)
-================================ */
-
-/* Section spacing */
-.section {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+.navbar {
+  max-width: 1200px;
+  margin: auto;
+  background: #2f4f3a;
+  border-radius: 60px;
+  padding: 14px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-/* Container */
-.container-xl {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-/* ===============================
-   BUTTON PRESETS
-================================ */
-.btn-primary {
-  background-color: var(--green-dark);
-  color: white;
-  border-radius: 9999px;
-  padding: 0.75rem 1.75rem;
+.logo-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fdbb2d;
+  color: #2f4f3a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.navbar-brand {
+  color: #ffffff;
+  font-size: 20px;
   font-weight: 600;
-  transition: all 0.3s ease;
 }
 
-.btn-primary:hover {
-  background-color: var(--green-light);
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 26px;
+  color: #d6e5dc;
 }
 
-.btn-outline {
-  border: 1px solid #d1d5db;
-  border-radius: 9999px;
-  padding: 0.75rem 1.75rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
+.navbar-links li {
+  cursor: pointer;
 }
 
-.btn-outline:hover {
-  border-color: #9ca3af;
+.navbar-links li:hover {
+  color: #fdbb2d;
 }
 
-/* ===============================
-   CARD STYLE (SERVICES)
-================================ */
-.card {
-  background: white;
-  border-radius: 1rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-  transition: all 0.3s ease;
+.navbar-cta {
+  background: #ffffff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-weight: 500;
+  cursor: pointer;
 }
 
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+/* ---------------- HERO ---------------- */
+.hero-section {
+  padding: 90px 0;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+/* LEFT */
+.hero-left {
+  max-width: 520px;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-size: 44px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.hero-title span {
+  color: #fdbb2d;
+}
+
+.hero-description {
+  margin: 20px 0 30px;
+  font-size: 16px;
+  color: #555;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.primary-btn {
+  background: #2f4f3a;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+.secondary-btn {
+  background: transparent;
+  border: 2px solid #2f4f3a;
+  padding: 12px 26px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+/* RIGHT */
+.hero-right {
+  position: relative;
+  width: 360px;
+  height: 360px;
+}
+
+.hero-circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #fdbb2d;
+}
+
+.hero-tag {
+  position: absolute;
+  background: #2f4f3a;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.tag-top {
+  top: -10px;
+  right: 0;
+}
+
+.tag-bottom {
+  bottom: -10px;
+  left: 0;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 900px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
 }
