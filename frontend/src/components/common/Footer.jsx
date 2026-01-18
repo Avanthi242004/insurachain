@@ -1,10 +1,23 @@
 export default function Footer() {
   return (
-    <footer className="bg-black text-white py-10">
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-6">
-        <p>© 2026 Insurance App</p>
-        <p>Privacy Policy</p>
-        <p>Support</p>
+    <footer className="footer">
+      <div className="footer-container">
+
+        <div className="footer-brand">
+          <div className="footer-logo">I</div>
+          <span className="footer-name">InsuraChain</span>
+        </div>
+
+        <ul className="footer-links">
+          <li>Privacy Policy</li>
+          <li>Support</li>
+          <li>Contact</li>
+        </ul>
+
+        <p className="footer-copy">
+          © 2026 InsuraChain. All rights reserved.
+        </p>
+
       </div>
     </footer>
   );

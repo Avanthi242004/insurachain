@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Hero() {
   return (
     <section className="hero-section">
@@ -19,14 +21,20 @@ export default function Hero() {
           </p>
 
           <div className="hero-buttons">
-            <button className="primary-btn">Explore Policies</button>
-            <button className="secondary-btn">Track Claim</button>
+            {/* Explore Policies — navigates */}
+            <Link to="/policies" className="primary-btn">
+              Explore Policies
+            </Link>
+
+            {/* Track Claim — navigates */}
+            <Link to="/claim/track" className="secondary-btn">
+              Track Claim
+            </Link>
           </div>
         </div>
 
         {/* RIGHT CONTENT */}
         <div className="hero-right">
-          {/* Dummy image (replace later) */}
           <img
             src="https://via.placeholder.com/360x360.png?text=Blockchain+Insurance"
             alt="Blockchain Insurance"

@@ -1,5 +1,3 @@
-import MainLayout from "../components/layout/MainLayout";
-
 export default function Policies() {
   const policies = [
     {
@@ -20,39 +18,38 @@ export default function Policies() {
   ];
 
   return (
-    <MainLayout>
-      <h2 className="text-2xl font-bold mb-6 text-gray-800">
+    <div className="policies-page">
+
+      <h2 className="policies-title">
         Available Insurance Policies
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="policies-grid">
         {policies.map((p, i) => (
-          <div
-            key={i}
-            className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition"
-          >
-            <h3 className="font-bold text-lg text-blue-700">
-              {p.name}
-            </h3>
+          <div key={i} className="policy-card">
 
-            <p className="text-sm text-gray-600 mt-2">
-              Coverage: <span className="font-medium">{p.coverage}</span>
+            <h3 className="policy-name">{p.name}</h3>
+
+            <p className="policy-text">
+              Coverage: <span>{p.coverage}</span>
             </p>
 
-            <p className="text-sm text-gray-600 mt-1">
-              Premium: <span className="font-medium">{p.premium}</span>
+            <p className="policy-text">
+              Premium: <span>{p.premium}</span>
             </p>
 
-            <p className="text-xs text-gray-500 mt-3">
+            <p className="policy-note">
               Blockchain secured policy with tamper-proof records.
             </p>
 
-            <button className="mt-5 w-full bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+            <button className="policy-btn">
               Buy Policy
             </button>
+
           </div>
         ))}
       </div>
-    </MainLayout>
+
+    </div>
   );
 }
