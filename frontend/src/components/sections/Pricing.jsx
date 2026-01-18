@@ -1,35 +1,81 @@
 export default function Pricing() {
+  const plans = [
+    {
+      name: "Basic",
+      price: "₹0",
+      duration: "Forever",
+      features: [
+        "View Policies",
+        "Basic Claim Tracking",
+        "Blockchain Record View",
+      ],
+    },
+    {
+      name: "Standard",
+      price: "₹999",
+      duration: "/ year",
+      featured: true,
+      features: [
+        "Full Claim Management",
+        "Real-Time Claim Tracking",
+        "Smart Contract Verification",
+        "Email Notifications",
+      ],
+    },
+    {
+      name: "Premium",
+      price: "₹2,499",
+      duration: "/ year",
+      features: [
+        "Priority Claim Processing",
+        "Advanced Fraud Detection",
+        "24/7 Support",
+        "Complete Blockchain Audit",
+      ],
+    },
+  ];
+
   return (
-    <section className="py-28 bg-white">
-      <div className="max-w-7xl mx-auto px-6 text-center">
+    <section className="pricing-section">
+      <div className="pricing-container">
 
-        <span className="text-primary uppercase font-semibold">
-          Pricing Plan
-        </span>
-
-        <h2 className="mt-4 text-4xl font-bold">
-          Popular Pricing Plan
+        <span className="pricing-label">— Pricing</span>
+        <h2 className="pricing-title">
+          Choose the Right <span>Plan</span>
         </h2>
 
-        <div className="mt-16 grid md:grid-cols-3 gap-10">
-          {["Free", "Standard", "Premium"].map((plan, i) => (
+        <div className="pricing-grid">
+          {plans.map((plan, i) => (
             <div
-              key={plan}
-              className={`p-10 rounded-2xl border ${
-                i === 1
-                  ? "bg-gray-900 text-white scale-105"
-                  : "bg-white"
+              key={i}
+              className={`pricing-card ${
+                plan.featured ? "featured" : ""
               }`}
             >
-              <h3 className="text-xl font-semibold">{plan}</h3>
-              <p className="text-4xl font-bold mt-6">$99</p>
+              {plan.featured && (
+                <span className="pricing-badge">Most Popular</span>
+              )}
 
-              <button className="mt-8 bg-primary text-white px-6 py-3 rounded-md">
+              <h3 className="pricing-name">{plan.name}</h3>
+
+              <p className="pricing-price">
+                {plan.price}
+                <span>{plan.duration}</span>
+              </p>
+
+              <ul className="pricing-features">
+                {plan.features.map((f, idx) => (
+                  <li key={idx}>✓ {f}</li>
+                ))}
+              </ul>
+
+              <button className="pricing-btn">
                 Choose Plan
               </button>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
