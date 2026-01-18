@@ -1,6 +1,8 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
 import Login from "../pages/Login";
+import ForgotPassword from "../pages/ForgotPassword";
+
 import UserDashboard from "../pages/UserDashboard";
 import Policies from "../pages/Policies";
 import Claim from "../pages/Claim";
@@ -9,35 +11,48 @@ import Payments from "../pages/Payments";
 import Notifications from "../pages/Notifications";
 import Profile from "../pages/Profile";
 import BlockchainLog from "../pages/BlockchainLog";
-import ForgotPassword from "../pages/ForgotPassword";
 
+import MainLayout from "../components/layout/MainLayout";
 import ProtectedRoute from "../components/common/ProtectedRoute";
 
 export default function AppRoutes() {
   return (
     <Routes>
 
+      {/* ---------- PUBLIC ROUTES ---------- */}
       <Route path="/" element={<Login />} />
       <Route path="/login" element={<Login />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
 
+      {/* ---------- PROTECTED ROUTES WITH LAYOUT ---------- */}
       <Route
-        path="/dashboard"
         element={
           <ProtectedRoute>
-            <UserDashboard />
+            <MainLayout />
           </ProtectedRoute>
         }
-      />
+      >
+        {/* Default protected page */}
+        <Route index element={<Navigate to="/dashboard" />} />
 
-      <Route path="/policies" element={<ProtectedRoute><Policies /></ProtectedRoute>} />
-      <Route path="/claims" element={<ProtectedRoute><Claim /></ProtectedRoute>} />
-      <Route path="/track-claim" element={<ProtectedRoute><TrackClaim /></ProtectedRoute>} />
-      <Route path="/payments" element={<ProtectedRoute><Payments /></ProtectedRoute>} />
-      <Route path="/notifications" element={<ProtectedRoute><Notifications /></ProtectedRoute>} />
-      <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
-      <Route path="/blockchain" element={<ProtectedRoute><BlockchainLog /></ProtectedRoute>} />
+        <Route path="/dashboard" element={<UserDashboard />} />
+        <Route path="/policies" element={<Policies />} />
 
+        {/* CLAIM PAGES */}
+        <Route path="/claim/new" element={<Claim />} />
+        <Route path="/claim/track" element={<TrackClaim />} />
+
+        <Route path="/payments" element={<Payments />} />
+        <Route path="/notifications" element={<Notifications />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/blockchain" element={<BlockchainLog />} />
+      </Route>
+
+      {/* ---------- BACKWARD COMPATIBILITY ---------- */}
+      <Route path="/claims" element={<Navigate to="/claim/new" />} />
+      <Route path="/track-claim" element={<Navigate to="/claim/track" />} />
+
+      {/* ---------- FALLBACK ---------- */}
       <Route path="*" element={<Navigate to="/" />} />
 
     </Routes>

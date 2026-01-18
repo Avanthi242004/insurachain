@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Navbar() {
   return (
     <header className="navbar-wrapper">
@@ -11,15 +13,19 @@ export default function Navbar() {
 
         {/* Links */}
         <ul className="navbar-links">
-          <li>Home</li>
-          <li>Services</li>
-          <li>Policies</li>
-          <li>Claims</li>
-          <li>About</li>
+          <li><Link to="/" className="nav-link">Home</Link></li>
+          <li><Link to="/services" className="nav-link">Services</Link></li>
+          <li><Link to="/policies" className="nav-link">Policies</Link></li>
+          <li><Link to="/claim/new" className="nav-link">Claims</Link></li>
+
+          <li><Link to="/about" className="nav-link">About</Link></li>
         </ul>
 
         {/* CTA */}
-        <button className="navbar-cta">Contact Us</button>
+        <Link to="/contact" className="navbar-cta">
+          Contact Us
+        </Link>
+
       </nav>
     </header>
   );
