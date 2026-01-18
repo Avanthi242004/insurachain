@@ -5,33 +5,34 @@ export default function Login() {
   const { login } = useAuth();
   const navigate = useNavigate();
 
-  const handleLogin = () => {
+  const handleLogin = (e) => {
+    e.preventDefault();
     login({ name: "User" });
     navigate("/dashboard");
   };
 
   return (
     <div className="auth-page">
-      <div className="auth-card">
-
+      <form className="auth-card" onSubmit={handleLogin}>
         <h2>User Login</h2>
+
         <p className="auth-subtitle">
           Access your blockchain-secured insurance account
         </p>
 
-        <input type="email" placeholder="Email" />
-        <input type="password" placeholder="Password" />
+        <div className="auth-inputs">
+          <input type="email" placeholder="Email" required />
+          <input type="password" placeholder="Password" required />
+        </div>
 
-        {/* Forgot Password */}
         <div className="auth-forgot">
           <Link to="/forgot-password">Forgot Password?</Link>
         </div>
 
-        <button className="auth-btn" onClick={handleLogin}>
+        <button type="submit" className="auth-btn">
           Login
         </button>
-
-      </div>
+      </form>
     </div>
   );
 }
