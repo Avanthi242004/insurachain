@@ -11,6 +11,7 @@ import Payments from "../pages/Payments";
 import Notifications from "../pages/Notifications";
 import Profile from "../pages/Profile";
 import BlockchainLog from "../pages/BlockchainLog";
+import About from "../pages/About";
 
 import MainLayout from "../components/layout/MainLayout";
 import ProtectedRoute from "../components/common/ProtectedRoute";
@@ -38,14 +39,18 @@ export default function AppRoutes() {
         <Route path="/dashboard" element={<UserDashboard />} />
         <Route path="/policies" element={<Policies />} />
 
-        {/* CLAIM PAGES */}
+        {/* CLAIM ROUTES */}
         <Route path="/claim/new" element={<Claim />} />
         <Route path="/claim/track" element={<TrackClaim />} />
 
+        {/* OTHER MODULES */}
         <Route path="/payments" element={<Payments />} />
         <Route path="/notifications" element={<Notifications />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/blockchain" element={<BlockchainLog />} />
+
+        {/* ✅ ABOUT PAGE */}
+        <Route path="/about" element={<About />} />
       </Route>
 
       {/* ---------- BACKWARD COMPATIBILITY ---------- */}
