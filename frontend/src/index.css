@@ -592,19 +592,21 @@ body {
   align-items: center;
 }
 
-/* LEFT SIDE */
+/* ================= LEFT SIDE ================= */
 .services-left {
   flex: 1;
   display: flex;
   justify-content: center;
 }
 
+/* Image wrapper */
 .services-image-wrapper {
   position: relative;
-  width: 320px;
-  height: 320px;
+  width: 340px;
+  height: 340px;
 }
 
+/* Image */
 .services-image {
   width: 100%;
   height: 100%;
@@ -612,36 +614,80 @@ body {
   object-fit: cover;
   box-shadow: var(--shadow-strong);
   background: #ffffff;
+  position: relative;
+  z-index: 2;
 }
 
-/* Floating pills */
+/* ================= FLOATING PILLS ================= */
 .service-pill {
   position: absolute;
   background: #ffffff;
   color: var(--green-main);
-  padding: 8px 14px;
-  border-radius: 30px;
+  padding: 8px 16px;
+  border-radius: 999px;
   font-size: 12px;
   font-weight: 500;
   box-shadow: var(--shadow-soft);
   white-space: nowrap;
-  animation: float 4s ease-in-out infinite;
+  z-index: 3;
+
+  animation: pillFloat 6s ease-in-out infinite;
+  transition: transform 0.3s ease;
 }
 
-/* Individual positions */
-.pill-1 { top: -14px; left: 50%; transform: translateX(-50%); }
-.pill-2 { top: 30%; left: -28px; }
-.pill-3 { bottom: 30%; left: -38px; }
-.pill-4 { top: 30%; right: -38px; }
-.pill-5 { bottom: 30%; right: -28px; }
+/* Hover polish */
+.service-pill:hover {
+  transform: scale(1.05);
+}
+
+/* ================= RADIAL POSITIONS ================= */
+/* Top */
+.pill-1 {
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-delay: 0s;
+}
+
+/* Upper left */
+.pill-2 {
+  top: 22%;
+  left: -42px;
+  animation-delay: 0.6s;
+}
+
+/* Bottom left */
+.pill-3 {
+  bottom: 22%;
+  left: -46px;
+  animation-delay: 1.2s;
+}
+
+/* Upper right */
+.pill-4 {
+  top: 22%;
+  right: -46px;
+  animation-delay: 0.9s;
+}
+
+/* Bottom right */
+.pill-5 {
+  bottom: 22%;
+  right: -42px;
+  animation-delay: 1.5s;
+}
 
 /* Floating animation */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+@keyframes pillFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.02);
+  }
 }
 
-/* RIGHT SIDE */
+/* ================= RIGHT SIDE ================= */
 .services-right {
   flex: 1;
 }
@@ -681,10 +727,6 @@ body {
   margin-bottom: 36px;
 }
 
-.services-stats div {
-  text-align: left;
-}
-
 .services-stats h3 {
   font-size: 28px;
   font-weight: 700;
@@ -697,7 +739,7 @@ body {
   margin-top: 4px;
 }
 
-/* CTA Button */
+/* CTA */
 .services-btn {
   background: #ffffff;
   color: var(--green-main);
@@ -731,11 +773,33 @@ body {
     justify-content: center;
   }
 
-  .services-description {
-    margin-left: auto;
-    margin-right: auto;
+  /* Hide side pills on mobile */
+  .pill-2,
+  .pill-3,
+  .pill-4,
+  .pill-5 {
+    display: none;
+  }
+
+  .services-image-wrapper {
+    width: 280px;
+    height: 280px;
   }
 }
+
+@media (max-width: 480px) {
+  .services-image-wrapper {
+    width: 240px;
+    height: 240px;
+  }
+
+  .service-pill {
+    font-size: 11px;
+    padding: 6px 12px;
+  }
+}
+
+
 /* ================= PRICING ================= */
 .pricing-section {
   padding: 110px 0;

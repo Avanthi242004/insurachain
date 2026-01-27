@@ -23,7 +23,7 @@ export default function Features() {
           <div className="feature-card">
             <div className="feature-icon">
               <img
-                src="https://via.placeholder.com/48?text=🔗"
+                src="images/icons/blockchain.jpeg"
                 alt="Blockchain"
               />
             </div>
@@ -38,7 +38,7 @@ export default function Features() {
           <div className="feature-card">
             <div className="feature-icon">
               <img
-                src="https://via.placeholder.com/48?text=⚡"
+                src="images/icons/fastchain.jpeg"
                 alt="Fast Claims"
               />
             </div>
@@ -53,7 +53,7 @@ export default function Features() {
           <div className="feature-card">
             <div className="feature-icon">
               <img
-                src="https://via.placeholder.com/48?text=📊"
+                src="images/icons/track.jpeg"
                 alt="Tracking"
               />
             </div>

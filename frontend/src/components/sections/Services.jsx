@@ -7,7 +7,7 @@ export default function Services() {
         <div className="services-left">
           <div className="services-image-wrapper">
             <img
-              src="https://via.placeholder.com/320x320.png?text=Insurance+Expert"
+              src="images/hero/services.jpeg"
               alt="Insurance Services"
               className="services-image"
             />
