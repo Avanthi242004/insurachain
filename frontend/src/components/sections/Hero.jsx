@@ -36,13 +36,12 @@ export default function Hero() {
         {/* RIGHT CONTENT */}
         <div className="hero-right">
           <img
-            src="https://via.placeholder.com/360x360.png?text=Blockchain+Insurance"
+            src="/images/hero/hero.jpeg"
             alt="Blockchain Insurance"
             className="hero-image"
           />
 
-          <span className="hero-tag tag-top">Decentralized</span>
-          <span className="hero-tag tag-bottom">Tamper-Proof</span>
+          
         </div>
 
       </div>

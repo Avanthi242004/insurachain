@@ -13,17 +13,40 @@ export default function Navbar() {
 
         {/* Links */}
         <ul className="navbar-links">
-          <li><Link to="/" className="nav-link">Home</Link></li>
-          <li><Link to="/services" className="nav-link">Services</Link></li>
-          <li><Link to="/policies" className="nav-link">Policies</Link></li>
-          <li><Link to="/claim/new" className="nav-link">Claims</Link></li>
+          <li>
+            <Link to="/dashboard" className="nav-link">
+              Home
+            </Link>
+          </li>
 
-          <li><Link to="/about" className="nav-link">About</Link></li>
+          <li>
+            <Link to="/services" className="nav-link">
+              Services
+            </Link>
+          </li>
+
+          <li>
+            <Link to="/policies" className="nav-link">
+              Policies
+            </Link>
+          </li>
+
+          <li>
+            <Link to="/claim/new" className="nav-link">
+              Claims
+            </Link>
+          </li>
+
+          <li>
+            <Link to="/about" className="nav-link">
+              About
+            </Link>
+          </li>
         </ul>
 
         {/* CTA */}
-        <Link to="/contact" className="navbar-cta">
-          Contact Us
+        <Link to="/policies" className="navbar-cta">
+          Get Started
         </Link>
 
       </nav>

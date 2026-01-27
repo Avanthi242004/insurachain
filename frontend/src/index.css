@@ -308,6 +308,42 @@ body {
   gap: 16px;
 }
 
+/* ================= HERO IMAGE ================= */
+.hero-right {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image {
+  width: 360px;
+  max-width: 100%;
+  height: auto;
+
+  border-radius: 24px;
+  object-fit: cover;
+
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.18),
+    0 8px 18px rgba(0, 0, 0, 0.08);
+
+  animation: heroFloat 5s ease-in-out infinite;
+}
+
+/* Floating animation */
+@keyframes heroFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 /* ================= BUTTONS ================= */
 .primary-btn,
 .secondary-btn {
@@ -321,7 +357,7 @@ body {
   font-weight: 500;
   cursor: pointer;
   transition: 0.3s ease;
-  text-decoration: none; /* IMPORTANT for <Link> */
+  text-decoration: none;
 }
 
 /* Primary */
@@ -335,24 +371,11 @@ body {
   transform: translateY(-2px);
 }
 
+/* Secondary */
 .secondary-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 14px 28px;
-  border-radius: 30px;
-
   background: transparent;
   border: 2px solid var(--green-main);
-
   color: var(--green-main);
-  font-weight: 500;
-  font-size: 15px;
-
-  text-decoration: none;
-  cursor: pointer;
-  transition: 0.3s ease;
 }
 
 .secondary-btn:hover {
@@ -360,24 +383,41 @@ body {
   color: #ffffff;
 }
 
-/* neutralize visited */
-.secondary-btn:visited {
-  color: var(--green-main);
-}
-
-/* IMPORTANT: visited + hover */
-.secondary-btn:visited:hover {
-  color: #ffffff;
-}
-
-
-/* Kill browser link states */
+/* Neutralize link states */
 .secondary-btn:link,
 .secondary-btn:visited,
 .secondary-btn:active {
   color: var(--green-main);
   text-decoration: none;
 }
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-image {
+    width: 320px;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .hero-image {
+    width: 260px;
+  }
+}
+
 
 /* ================= FEATURES ================= */
 .features-section {
