@@ -988,7 +988,164 @@ body {
     font-size: 14px;
   }
 }
+css
+/* ================= CLAIM TIMELINE ================= */
 
+.timeline-wrapper {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px 0;
+}
+
+.timeline-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--green-main);
+  margin-bottom: 40px;
+}
+
+/* Timeline container */
+.timeline {
+  position: relative;
+}
+
+/* Item */
+.timeline-item {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+  animation: fadeInUp 0.5s ease both;
+}
+
+/* Marker */
+.timeline-marker {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Dot */
+.timeline-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ccc;
+  z-index: 2;
+}
+
+/* Line */
+.timeline-line {
+  width: 3px;
+  flex: 1;
+  background: #e0e0e0;
+  margin-top: 6px;
+}
+
+/* Status colors */
+.timeline-item.completed .timeline-dot {
+  background: var(--green-main);
+}
+
+.timeline-item.active .timeline-dot {
+  background: var(--yellow-main);
+  box-shadow: 0 0 0 6px rgba(253, 187, 45, 0.3);
+  animation: pulse 1.6s infinite;
+}
+
+.timeline-item.pending .timeline-dot {
+  background: #bbb;
+}
+
+/* Content */
+.timeline-content {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  width: 100%;
+  transition: 0.3s;
+}
+
+.timeline-content h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--green-main);
+  margin-bottom: 6px;
+}
+
+.timeline-time {
+  font-size: 12px;
+  color: #777;
+}
+
+.timeline-content p {
+  font-size: 14px;
+  color: #555;
+  margin: 12px 0;
+  line-height: 1.6;
+}
+
+/* Blockchain hash */
+.timeline-hash {
+  font-size: 12px;
+  background: #f5f7f6;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.timeline-hash span {
+  margin-left: 6px;
+  font-family: monospace;
+  color: var(--green-main);
+}
+
+/* Badge */
+.timeline-badge {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  background: rgba(253, 187, 45, 0.2);
+  color: #9a6b00;
+  font-weight: 500;
+}
+
+/* Hover */
+.timeline-content:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-strong);
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(253, 187, 45, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(253, 187, 45, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(253, 187, 45, 0);
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .timeline-item {
+    gap: 18px;
+  }
+
+  .timeline-content {
+    padding: 20px;
+  }
+
+  .timeline-title {
+    font-size: 24px;
+  }
+}
 
 /* ================= CLAIM PAGE ================= */
 .claim-page {
